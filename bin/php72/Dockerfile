@@ -11,9 +11,6 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get -y update --fix-missing --no-install-recommends
 RUN apt-get -y upgrade
 
-# Install useful tools
-# RUN apt-get -yq install apt-utils nano wget dialog
-
 # Install important libraries
 RUN apt-get -y install --fix-missing --no-install-recommends\
   apt-utils\
