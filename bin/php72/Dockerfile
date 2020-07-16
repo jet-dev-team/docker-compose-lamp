@@ -23,37 +23,32 @@ RUN apt-get -y install --fix-missing --no-install-recommends\
   openssl\
   memcached\
   libmemcached-dev\
-  libmagickwand-dev\
   netcat\
   libpq-dev\
-  imagemagick\
   libsqlite3-dev\
   libsqlite3-0\
   mysql-client\
   libfreetype6-dev\
   libjpeg62-turbo-dev\
-  libpng-dev
+  libpng-dev \
+  libxml2-dev
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
+# TODO make optional
 # Install xdebug
-RUN pecl install xdebug-2.6.0
-RUN docker-php-ext-enable xdebug
-
-# Install imagemagick
-RUN pecl install imagick
-RUN docker-php-ext-enable imagick
+# RUN pecl install xdebug-2.6.0
+# RUN docker-php-ext-enable xdebug
 
 # Install memcached
 RUN pecl install memcached
 RUN docker-php-ext-enable memcached
 
 # Other PHP7 Extensions
-
+RUN docker-php-ext-install soap
 RUN docker-php-ext-install opcache
 RUN docker-php-ext-install pdo_mysql
-RUN docker-php-ext-install pdo_sqlite
 RUN docker-php-ext-install mysqli
 
 RUN docker-php-ext-install curl
