@@ -8,8 +8,8 @@ FROM php:7.2-apache-stretch
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get -y update --fix-missing --no-install-recommends
-RUN apt-get -y upgrade
+RUN apt-get -y update
+RUN apt-get -y upgrade --fix-missing --no-install-recommends
 
 # Install important libraries
 RUN apt-get -y install --fix-missing --no-install-recommends\
