@@ -46,7 +46,6 @@ ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS="1" \
 
 # Install Opcache
 RUN docker-php-ext-install opcache
-COPY docker/php/conf.d/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 
 # Install memcached
 RUN pecl install memcached-3.1.5 && \
