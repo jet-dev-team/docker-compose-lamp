@@ -44,7 +44,7 @@ ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS="1" \
 RUN docker-php-ext-install opcache
 
 # Install memcached
-RUN pecl install memcached-3.1.5 && \
+RUN pecl install memcached && \
     docker-php-ext-enable memcached
 
 # Install imagick
