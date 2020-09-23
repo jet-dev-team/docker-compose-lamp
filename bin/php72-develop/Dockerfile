@@ -39,6 +39,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Install memcached
 RUN pecl install memcached
 RUN docker-php-ext-enable memcached
+# Install xdebug
+RUN pecl install xdebug-2.6.0
+RUN docker-php-ext-enable xdebug
 
 # Other PHP7 Extensions
 RUN docker-php-ext-install soap
