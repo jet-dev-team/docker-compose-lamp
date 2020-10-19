@@ -18,10 +18,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN pecl install memcached
 RUN docker-php-ext-enable memcached
 
-# Install memcached
-RUN pecl install memcached
-RUN docker-php-ext-enable memcached
-
 ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS="1" \
   PHP_OPCACHE_MAX_ACCELERATED_FILES="10000" \
   PHP_OPCACHE_MEMORY_CONSUMPTION="192" \

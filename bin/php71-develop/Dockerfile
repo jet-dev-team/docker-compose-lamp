@@ -19,9 +19,6 @@ RUN docker-php-ext-enable xdebug
 # Install memcached
 RUN pecl install memcached
 RUN docker-php-ext-enable memcached
-# Install memcached
-RUN pecl install memcached
-RUN docker-php-ext-enable memcached
 
 ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS="1" \
   PHP_OPCACHE_MAX_ACCELERATED_FILES="10000" \
