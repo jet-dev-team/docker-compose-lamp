@@ -16,10 +16,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN pecl install xdebug-2.5.0
 RUN docker-php-ext-enable xdebug
 
-# Install memcached
-RUN pecl install memcached
-RUN docker-php-ext-enable memcached
-
 ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS="1" \
   PHP_OPCACHE_MAX_ACCELERATED_FILES="10000" \
   PHP_OPCACHE_MEMORY_CONSUMPTION="192" \
@@ -44,6 +40,10 @@ RUN docker-php-ext-install json
 
 RUN apt-get -y install zlib1g-dev
 RUN docker-php-ext-install zip
+
+# Install memcached
+RUN pecl install memcached
+RUN docker-php-ext-enable memcached
 
 RUN apt-get -y install libicu-dev
 RUN docker-php-ext-install -j$(nproc) intl
