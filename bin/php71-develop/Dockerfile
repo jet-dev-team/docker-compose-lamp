@@ -7,7 +7,7 @@ RUN apt-get upgrade -y
 RUN apt-get -y install apt-utils nano wget dialog
 
 # Install important libraries
-RUN apt-get -y install --fix-missing apt-utils build-essential git curl libcurl3 libcurl3-dev zip libmemcached-dev
+RUN apt-get -y install --fix-missing apt-utils build-essential git curl libcurl3 libcurl3-dev zip libmemcached-dev libxml2-dev
 
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
