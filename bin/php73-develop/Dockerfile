@@ -22,7 +22,7 @@ RUN apt-get -y update && \
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Install xdebug
-RUN pecl install xdebug-2.9.8 && \
+RUN pecl install xdebug-3.0.2 && \
     docker-php-ext-enable xdebug
 
 # Install memcached
