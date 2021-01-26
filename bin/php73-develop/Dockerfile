@@ -60,6 +60,6 @@ RUN apt-get -y update && \
 
 # Enable apache modules
 RUN a2enmod rewrite headers
-
+RUN a2enmod ssl
 # Cleanup
 RUN rm -rf /usr/src/*
